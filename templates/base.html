@@ -50,9 +50,9 @@
 					</button>
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-						<ul class="nav navbar-nav menu_nav justify-content-center mx-auto" " >
+						<ul class="nav navbar-nav menu_nav justify-content-center mx-auto" >
 							<li class="nav-item">
-								<a class="nav-link" href="index.html" style="font-family: Bree Serif, serif;">Home</a>
+								<a class="nav-link" href="{{ url_for('home') }}" style="font-family: Bree Serif, serif;">Home</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="category.html" style="font-family: Bree Serif, serif;">Category</a>
@@ -76,8 +76,11 @@
 								<a class="nav-link" href="contact.html" style="font-family: Bree Serif, serif;">Contact</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="Signup.html" style="font-family: Bree Serif, serif;">Sign Up</a>
-								</li>
+								<a class="nav-link" href="{{ url_for('home') }}" style="font-family: Bree Serif, serif;">Sign In</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ url_for('register') }}" style="font-family: Bree Serif, serif;">Sign Up</a>
+							</li>
 						</ul>
 						<ul class="nav navbar-nav ml-auto search">
 								<li class="nav-item d-flex align-items-center mr-10">

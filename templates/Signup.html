@@ -24,7 +24,7 @@
                                         <span>{{ error }}</span>
                                         {% endfor %}
                                       
-                                    </div>>
+                                    </div>
                                     {% else %}
                                     {{ form.username(class="form-control") }} 
                                 {% endif %}
@@ -38,7 +38,7 @@
                                         {% for error in form.email.errors %}
                                         <span>{{ error }}</span>
                                         {% endfor %}
-                                    </div>>
+                                    </div>
                                     {% else %}
                                     {{ form.email(class="form-control") }} 
                                 {% endif %}
@@ -51,7 +51,7 @@
                                         {% for error in form.password.errors %}
                                         <span>{{ error }}</span>
                                         {% endfor %}  
-                                    </div>>
+                                    </div>
                                     {% else %}
                                     {{ form.password(class="form-control") }} 
                                 {% endif %}
@@ -65,7 +65,7 @@
                                         {% for error in form.confirm_password.errors %}
                                         <span>{{ error }}</span>
                                         {% endfor %}  
-                                    </div>>
+                                    </div>
                                     {% else %}
                                     {{ form.confirm_password(class="form-control") }} 
                                 {% endif %}   
@@ -77,11 +77,12 @@
                         
                         </div>
                     </form>
+                    <div class="pt-3">
+                        <small class="text-muted">
+                            Already have an account!! <a class="ml-2" href="{{ url_for('home') }}">Sign In</a> 
+                        </small>
+                    </div>
                 </div>
-                <div class="border-top pt-3">
-                    <small class="text-muted">
-                        Already have an account!! <a class="ml-2" href="{{ url_for('login') }}">Sign In</a>
-                </div>>
             </div>
         </div>
     </section>
