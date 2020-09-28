@@ -76,19 +76,38 @@
 					<h2 class="text-center py-4" style="font-family: Bree Serif, serif;">Sign In </h2>
 					<form>
 						<div class="form-group">
-						  <label for="exampleInputEmail1">Email address</label>
-						  <input type="email" class="form-control border-0" id="exampleInputEmail1" aria-describedby="emailHelp">
-						  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+							{{ form.email.label() }}
+							{% if form.email.errors %}
+								{{ form.email(class="form-control border-0 is-invalid") }}
+								<div class="invalid-feedback">
+									{% for error in form.email.errors %}
+									<span>{{ error }}</span>
+									{% endfor %}
+								</div>>
+								{% else %}
+								{{ form.email(class="form-control border-0") }} 
+							{% endif %}
 						</div>
 						<div class="form-group">
-						  <label for="exampleInputPassword1">Password</label>
-						  <input type="password" class="form-control" id="exampleInputPassword1">
-						</div>
+						
+                                {% if form.password.errors %}
+                                    {{ form.password(class="form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.password.errors %}
+                                        <span>{{ error }}</span>
+                                        {% endfor %}  
+                                    </div>>
+                                    {% else %}
+                                    {{ form.password(class="form-control") }} 
+                                {% endif %}
+						</div>	
 						<div class="form-group form-check">
-						  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-						  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+							{{ form.remember(class='form-check-input') }}
+							{{ form.remember.label(class='form-check-label') }}
 						</div>
-						<button type="button" class="btn btn-primary btn-lg btn-block">Sign In</button>
+						<div class="form-group">
+						{{ form.submit(class='btn btn-primary btn-lg btn-block') }}
+						</div>
 					  </form>
 				</div>
 			</div>
