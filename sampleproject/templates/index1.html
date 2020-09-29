@@ -1,5 +1,85 @@
 {% extends 'base.html' %}
 {% block content %}
+ 
+{% if current_user.is_authenticated %}
+
+<section class="home_banner_area">
+	<div class="owl-carousel owl-theme" id="home-owl">
+		<div class="slide-item owl-lazy" data-src="{{ url_for('static', filename='img/banner/home-banner.jpg') }}">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-5"></div>
+					<div class="col-lg-7">
+						<div class="blog_text_slider">
+							<div class="blog_text">
+								<img class="img-fluid" src="{{ url_for('static', filename='img/banner/banner-img.png') }}" alt="">
+								<div class="blog-meta bottom d-flex justify-content-between align-items-center flex-wrap">
+									<div class="meta">
+										<span class="icon fa fa-calendar"></span> March 14, 2018
+										<span class="icon fa fa-comments"></span> 05
+									</div>
+									<div>
+										<a class="read_more" href="#">Read More</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="slide-item owl-lazy" data-src="{{ url_for('static', filename='img/banner/home-banner2.jpg') }}">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-5"></div>
+					<div class="col-lg-7">
+						<div class="blog_text_slider">
+							<div class="blog_text">
+								<img class="img-fluid" src="{{ url_for('static', filename='img/banner/banner-img2.png') }}" alt="">
+								<div class="blog-meta bottom d-flex justify-content-between align-items-center flex-wrap">
+									<div class="meta">
+										<span class="icon fa fa-calendar"></span> March 14, 2018
+										<span class="icon fa fa-comments"></span> 05
+									</div>
+									<div>
+										<a class="read_more" href="#">Read More</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="slide-item owl-lazy" data-src="{{ url_for('static', filename='img/banner/home-banner3.jpg') }}">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-5"></div>
+					<div class="col-lg-7">
+						<div class="blog_text_slider">
+							<div class="blog_text">
+								<img class="img-fluid" src="{{ url_for('static', filename='img/banner/banner-img3.png') }}" alt="">
+								<div class="blog-meta bottom d-flex justify-content-between align-items-center flex-wrap">
+									<div class="meta">
+										<span class="icon fa fa-calendar"></span> March 14, 2018
+										<span class="icon fa fa-comments"></span> 05
+									</div>
+									<div>
+										<a class="read_more" href="#">Read More</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% else %}
 <!--================ Home Banner Area =================-->
 <section class="home_banner_area">
 	<div class="container-fluid">
@@ -7,9 +87,6 @@
 			<div class="col-lg-8">
 				<div class="owl-carousel owl-theme" id="home-owl">
 					<div class="slide-item owl-lazy" data-src="{{ url_for('static', filename='img/banner/home-banner.jpg') }}">
-						
-								
-								
 									<div class="blog_text_slider">
 										<div class="blog_text">
 											<img class="img-fluid" src="{{ url_for('static', filename='img/banner/banner-img.png') }}" alt="">
@@ -25,11 +102,7 @@
 										</div>
 									</div>
 								</div>
-		
-					<div class="slide-item owl-lazy" data-src="{{ url_for('static', filename='img/banner/home-banner2.jpg') }}">
-						
-								
-								
+								<div class="slide-item owl-lazy" data-src="{{ url_for('static', filename='img/banner/home-banner2.jpg') }}">
 									<div class="blog_text_slider">
 										<div class="blog_text">
 											<img class="img-fluid" src="{{ url_for('static', filename='img/banner/banner-img2.png ') }}'" alt="">
@@ -44,13 +117,8 @@
 											</div>
 										</div>
 									</div>
-								
-							
-					</div>
-		
-					<div class="slide-item owl-lazy" data-src="{{ url_for('static', filename='img/banner/home-banner3.jpg') }}">
-						
-								
+								</div>
+							<div class="slide-item owl-lazy" data-src="{{ url_for('static', filename='img/banner/home-banner3.jpg') }}">
 									<div class="blog_text_slider">
 										<div class="blog_text">
 											<img class="img-fluid" src="{{ url_for('static', filename='img/banner/banner-img3.png') }}" alt="">
@@ -65,8 +133,6 @@
 											</div>
 										</div>
 									</div>
-								
-						
 					</div>
 				</div>
 			</div>
@@ -117,6 +183,7 @@
 
 </section>
 <!--================ End Home Banner Area =================-->
+{% endif %}
 <!--================ Travel Category Area =================-->
 	<section class="travel_category">
 		<div class="container">
@@ -174,31 +241,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="single_travel wow fadeIn" data-wow-duration="1s" data-wow-delay=".6s">
-					<figure>
-						<img class="img-fluid" src="{{ url_for('static', filename='img/travel/t3.jpg') }}'" alt="">
-					</figure>
-					<div class="overlay"></div>
-					<div class="text-wrap">
-						<h3>
-							<a href="#" style="font-family: Bree Serif, serif;">Waterfall Travel</a>
-						</h3>
-						<div class="blog-meta white d-flex justify-content-between align-items-center flex-wrap">
-							<div class="meta">
-								<a href="#">
-									<span class="icon fa fa-calendar"></span> March 14, 2018
-									<span class="icon fa fa-comments"></span> 05
-								</a>
-							</div>
-							<div>
-								<a class="read_more" href="#" style="font-family: Bree Serif, serif;">Read More</a>
-							</div>
-						</div>
-					</div>
-				</div>
 				<div class="single_travel wow fadeIn" data-wow-duration="1s" data-wow-delay=".9s">
 					<figure>
-						<img class="img-fluid" src="{{ url_for('static', filename='img/travel/t1.jpg') }}" alt="">
+						<img class="img-fluid" src="{{ url_for('static', filename='img/travel/t3.jpg') }}" alt="">
 					</figure>
 					<div class="overlay"></div>
 					<div class="text-wrap">
