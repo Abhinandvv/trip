@@ -76,14 +76,21 @@
 							<li class="nav-item">
 								<a class="nav-link" href="contact.html" style="font-family: Bree Serif, serif;">Contact</a>
 							</li>
-							
+							{% if current_user.is_authenticated %}
+							<li class="nav-item">
+								<a class="nav-link" href="{{ url_for('addstory') }}" style="font-family: Bree Serif, serif;">Add Story</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ url_for('logout') }}" style="font-family: Bree Serif, serif;">Logout</a>
+							</li>
+							{% else %}
 							<li class="nav-item">
 								<a class="nav-link" href="{{ url_for('home') }}" style="font-family: Bree Serif, serif;">Sign In</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="{{ url_for('register') }}" style="font-family: Bree Serif, serif;">Sign Up</a>
 							</li>
-						
+							{% endif %}
 						</ul>
 						<ul class="nav navbar-nav ml-auto search">
 								<li class="nav-item d-flex align-items-center mr-10">
